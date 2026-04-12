@@ -15,9 +15,13 @@ public class Visiteur extends Utilisateur {
             m.incrementerEcoutes();
             nbEcoutesSession++;
             System.out.println("Lecture : " + m.getTitre());
-            try { Thread.sleep(m.getDuree() * 1000L); } catch (InterruptedException e) { Thread.currentThread().interrupt(); }
+            try {
+                Thread.sleep(m.getDuree() * 1000L);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
         } else {
-            System.out.println("Limite de " + MAX_ECOUTES + " écoutes atteinte. Créez un compte pour continuer.");
+            System.out.println("Limite de " + MAX_ECOUTES + " ecoutes atteinte. Creez un compte pour continuer.");
         }
     }
 
@@ -34,9 +38,12 @@ public class Visiteur extends Utilisateur {
         System.out.println("=== MENU VISITEUR ===");
         System.out.println("1. Consulter le catalogue");
         System.out.println("2. Rechercher");
-        System.out.println("3. Écouter un morceau (" + nbEcoutesSession + "/" + MAX_ECOUTES + ")");
-        System.out.println("4. Créer un compte");
+        System.out.println("3. Ecouter un morceau (" + nbEcoutesSession + "/" + MAX_ECOUTES + ")");
+        System.out.println("4. Creer un compte");
         System.out.println("5. Se connecter");
         System.out.println("6. Quitter");
     }
+
+    public int getNbEcoutesSession() { return nbEcoutesSession; }
+    public static int getMaxEcoutes() { return MAX_ECOUTES; }
 }

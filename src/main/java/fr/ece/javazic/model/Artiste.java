@@ -19,24 +19,10 @@ public class Artiste {
         this.morceaux = new ArrayList<>();
     }
 
-    public void afficherDetails() {
-        System.out.println("Artiste : " + nom);
-        System.out.println("Biographie : " + biographie);
-    }
-
-    public void afficherDiscographie() {
-        System.out.println("Discographie de " + nom + " :");
-        for (Album a : albums) a.afficherDetails();
-    }
-
-    public void afficherMorceaux() {
-        System.out.println("Morceaux de " + nom + " :");
-        for (Morceau m : morceaux) m.afficherDetails();
-    }
-
-    public void interprete(Morceau m) {
-        morceaux.add(m);
-    }
+    public void afficherDetails() { /* TODO (Ludo) */ }
+    public void afficherDiscographie() { /* TODO (Ludo) */ }
+    public void afficherMorceaux() { /* TODO (Ludo) */ }
+    public void interprete(Morceau m) { /* TODO (Ludo) */ }
 
     public int getId() { return id; }
     public String getNom() { return nom; }

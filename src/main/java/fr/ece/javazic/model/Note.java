@@ -12,19 +12,11 @@ public class Note {
     public Note(int valeur, String commentaire, Morceau morceau) {
         this.valeur = valeur;
         this.commentaire = commentaire;
-        this.date = LocalDate.now();
         this.morceau = morceau;
     }
 
-    public void modifier(int valeur, String commentaire) {
-        this.valeur = valeur;
-        this.commentaire = commentaire;
-        this.date = LocalDate.now();
-    }
-
-    public void supprimer() {
-        System.out.println("Note supprimée.");
-    }
+    public void modifier(int valeur, String commentaire) { /* TODO (Man) */ }
+    public void supprimer() { /* TODO (Man) */ }
 
     public int getValeur() { return valeur; }
     public String getCommentaire() { return commentaire; }

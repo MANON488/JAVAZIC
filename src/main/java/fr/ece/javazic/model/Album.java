@@ -17,17 +17,10 @@ public class Album {
         this.morceaux = new ArrayList<>();
     }
 
-    public void afficherDetails() {
-        System.out.println("Album : " + titre + " (" + annee + ")");
-    }
-
-    public void afficherMorceaux() {
-        System.out.println("Morceaux de " + titre + " :");
-        for (Morceau m : morceaux) m.afficherDetails();
-    }
-
-    public void ajouterMorceau(Morceau m) { morceaux.add(m); }
-    public boolean retirerMorceau(Morceau m) { return morceaux.remove(m); }
+    public void afficherDetails() { /* TODO (Ludo) */ }
+    public void afficherMorceaux() { /* TODO (Ludo) */ }
+    public void ajouterMorceau(Morceau m) { /* TODO (Ludo) */ }
+    public boolean retirerMorceau(Morceau m) { /* TODO (Ludo) */ return false; }
 
     public int getId() { return id; }
     public String getTitre() { return titre; }

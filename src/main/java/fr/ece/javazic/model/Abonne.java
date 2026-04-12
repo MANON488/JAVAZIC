@@ -18,60 +18,26 @@ public class Abonne extends Visiteur {
         this.notes = new ArrayList<>();
     }
 
-    @Override
+    // Marie-Eva — authentification
     public boolean seConnecter(String email, String mdp) {
-        if (suspendu) {
-            System.out.println("Compte suspendu.");
-            return false;
-        }
-        return super.seConnecter(email, mdp);
+        if (suspendu) { System.out.println("Compte suspendu."); return false; }
+        return getEmail().equals(email) && getMotDePasse().equals(mdp);
     }
 
     @Override
-    public void ecouter(Morceau m) {
-        m.incrementerEcoutes();
-        historique.ajouterEcoute(m);
-        System.out.println("Lecture : " + m.getTitre());
-        try { Thread.sleep(m.getDuree() * 1000L); } catch (InterruptedException e) { Thread.currentThread().interrupt(); }
-    }
-
-    public Playlist creerPlaylist(String nom) {
-        Playlist p = new Playlist(nom);
-        playlists.add(p);
-        return p;
-    }
-
-    public void supprimerPlaylist(Playlist p) {
-        playlists.remove(p);
-    }
-
-    public void noter(Morceau m, int valeur, String commentaire) {
-        Note n = new Note(valeur, commentaire, m);
-        notes.add(n);
-    }
-
-    public void modifierNote(Note n, int valeur, String commentaire) {
-        n.modifier(valeur, commentaire);
-    }
-
-    public void supprimerNote(Note n) {
-        notes.remove(n);
-    }
+    public void ecouter(Morceau m) { /* TODO (Man) */ }
+    public Playlist creerPlaylist(String nom) { /* TODO (Man) */ return null; }
+    public void supprimerPlaylist(Playlist p) { /* TODO (Man) */ }
+    public void noter(Morceau m, int valeur, String commentaire) { /* TODO (Man) */ }
+    public void modifierNote(Note n, int valeur, String commentaire) { /* TODO (Man) */ }
+    public void supprimerNote(Note n) { /* TODO (Man) */ }
 
     @Override
-    public void afficherMenu() {
-        System.out.println("=== MENU ABONNÉ — " + getNom() + " ===");
-        System.out.println("1. Consulter le catalogue");
-        System.out.println("2. Rechercher");
-        System.out.println("3. Écouter un morceau (illimité)");
-        System.out.println("4. Gérer mes playlists");
-        System.out.println("5. Consulter mon historique");
-        System.out.println("6. Noter un morceau");
-        System.out.println("7. Quitter");
-    }
+    public void afficherMenu() { /* TODO (Man) */ }
 
     public boolean isSuspendu() { return suspendu; }
     public void setSuspendu(boolean suspendu) { this.suspendu = suspendu; }
     public List<Playlist> getPlaylists() { return playlists; }
     public Historique getHistorique() { return historique; }
+    public List<Note> getNotes() { return notes; }
 }
