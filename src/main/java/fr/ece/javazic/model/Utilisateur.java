@@ -14,10 +14,6 @@ public abstract class Utilisateur {
         this.motDePasse = motDePasse;
     }
 
-    public boolean seConnecter(String email, String mdp) {
-        return this.email.equals(email) && this.motDePasse.equals(mdp);
-    }
-
     public void quitter() {
         System.out.println("Au revoir " + nom + " !");
         System.exit(0);
@@ -28,4 +24,5 @@ public abstract class Utilisateur {
     public int getId() { return id; }
     public String getNom() { return nom; }
     public String getEmail() { return email; }
+    public String getMotDePasse() { return motDePasse; }
 }

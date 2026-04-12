@@ -1,5 +1,7 @@
 package fr.ece.javazic.model;
 
+import java.util.List;
+
 public class Administrateur extends Utilisateur {
 
     private int niveauAcces;
@@ -9,40 +11,19 @@ public class Administrateur extends Utilisateur {
         this.niveauAcces = niveauAcces;
     }
 
-    @Override
+    // Marie-Eva — authentification
     public boolean seConnecter(String email, String mdp) {
-        return super.seConnecter(email, mdp);
+        return getEmail().equals(email) && getMotDePasse().equals(mdp);
     }
 
-    public void suspendreAbonne(Abonne a) {
-        a.setSuspendu(true);
-        System.out.println("Compte de " + a.getNom() + " suspendu.");
-    }
-
-    public boolean supprimerAbonne(Abonne a, java.util.List<Abonne> listeAbonnes) {
-        return listeAbonnes.remove(a);
-    }
-
-    public Statistiques consulterStatistiques(Catalogue cat) {
-        Statistiques s = new Statistiques();
-        s.calculer(cat);
-        return s;
-    }
-
-    public void afficherStatistiques(Statistiques s) {
-        s.afficher();
-    }
-
-    public void gererCatalogue(Catalogue cat) {
-        cat.afficher();
-    }
+    public void suspendreAbonne(Abonne a) { /* TODO (Omar) */ }
+    public boolean supprimerAbonne(Abonne a, List<Abonne> liste) { /* TODO (Omar) */ return false; }
+    public Statistiques consulterStatistiques(Catalogue cat) { /* TODO (Omar) */ return null; }
+    public void afficherStatistiques(Statistiques s) { /* TODO (Omar) */ }
+    public void gererCatalogue(Catalogue cat) { /* TODO (Omar) */ }
 
     @Override
-    public void afficherMenu() {
-        System.out.println("=== MENU ADMINISTRATEUR ===");
-        System.out.println("1. Gérer le catalogue");
-        System.out.println("2. Gérer les comptes abonnés");
-        System.out.println("3. Consulter les statistiques");
-        System.out.println("4. Quitter");
-    }
+    public void afficherMenu() { /* TODO (Omar) */ }
+
+    public int getNiveauAcces() { return niveauAcces; }
 }

@@ -16,13 +16,8 @@ public class Morceau {
         this.nbEcoutes = 0;
     }
 
-    public void incrementerEcoutes() {
-        this.nbEcoutes++;
-    }
-
-    public void afficherDetails() {
-        System.out.println("Morceau : " + titre + " | Durée : " + duree + "s | Genre : " + genre + " | Écoutes : " + nbEcoutes);
-    }
+    public void incrementerEcoutes() { /* TODO (Ludo) */ }
+    public void afficherDetails() { /* TODO (Ludo) */ }
 
     public int getId() { return id; }
     public String getTitre() { return titre; }
