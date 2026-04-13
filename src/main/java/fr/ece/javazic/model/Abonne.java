@@ -2,6 +2,7 @@ package fr.ece.javazic.model;
 
 import java.util.ArrayList;
 import java.util.List;
+import fr.ece.javazic.model.PlaylistDAO;
 
 public class Abonne extends Visiteur {
 
@@ -9,13 +10,16 @@ public class Abonne extends Visiteur {
     private List<Playlist> playlists;
     private Historique historique;
     private List<Note> notes;
+    private PlaylistDAO playlistDAO;
 
     public Abonne(int id, String nom, String email, String motDePasse) {
         super();
         this.suspendu = false;
         this.playlists = new ArrayList<>();
         this.historique = new Historique();
-        this.notes = new ArrayList<>();
+        this.playlistDAO = new PlaylistDAO();
+        this.playlists = playlistDAO.charger();
+        
     }
 
     // Marie-Eva — authentification
@@ -30,11 +34,15 @@ public void ecouter(Morceau m) {
 }
 
 public Playlist creerPlaylist(String nom) {
-    Playlist playlist = new Playlist(nom);playlists.add(playlist);return playlist;
+    Playlist playlist = new Playlist(nom);
+    playlists.add(playlist);
+    playlistDAO.sauvegarder(playlists);
+    return playlist;
 }
 
 public void supprimerPlaylist(Playlist p) {
     playlists.remove(p);
+    playlistDAO.sauvegarder(playlists);
 }
 
 public void noter(Morceau m, int valeur, String commentaire) {
