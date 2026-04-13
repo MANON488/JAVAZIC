@@ -4,7 +4,7 @@ import fr.ece.javazic.model.Abonne;
 import fr.ece.javazic.model.Playlist;
 
 public class AbonneView extends ConsoleView {
-
+ 
     public void menuPlaylists(Abonne abonne) {
         boolean continuer = true;
 
