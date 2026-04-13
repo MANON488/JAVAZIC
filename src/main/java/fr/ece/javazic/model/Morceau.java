@@ -1,6 +1,7 @@
 package fr.ece.javazic.model;
+import java.io.Serializable;
 
-public class Morceau {
+public class Morceau implements Serializable {
 
     private int id;
     private String titre;
