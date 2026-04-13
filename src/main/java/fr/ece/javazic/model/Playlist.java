@@ -2,8 +2,9 @@ package fr.ece.javazic.model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.io.Serializable;
 
-public class Playlist {
+public class Playlist implements Serializable {
     private int id;
     private String nom;
     private String dateCreation;
